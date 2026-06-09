@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary SEO Meta Tags -->
+    <title>Admin Portal | Shizen - Eco-Engineering & Heavy Logistics</title>
+    <meta name="description" content="Administration suite for Shizen Eco-Engineering. Publish, modify, and manage heavy transport case studies and sustainable engineering reports.">
+    <meta name="keywords" content="Shizen admin, logistics dashboard, publish blog, heavy cargo administration">
+    <!-- Favicon (Fallback SVG) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2310b981%22/><circle cx=%2250%22 cy=%2250%22 r=%2225%22 fill=%22%23070a13%22/></svg>">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- --- Header / Navigation --- -->
+    <header id="main-header" class="scrolled">
+        <div class="container">
+            <a href="index.html" class="logo" id="header-logo">
+                <div class="logo-icon"></div>
+                SHIZEN<span>.</span>
+            </a>
+            
+            <nav id="navbar">
+                <a href="index.html" id="nav-home">Home</a>
+                <a href="services.html" id="nav-services">Services</a>
+                <a href="about.html" id="nav-about">About Us</a>
+                <a href="blog.html" id="nav-blog">Blog</a>
+                <a href="contact.html" id="nav-contact">Contact Us</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;" id="nav-cta-quote">Book Transport</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Sub-Page Hero Header --- -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-title-prefix">
+                <div class="hero-title-line"></div>
+                <span>Secured Administration Terminal</span>
+            </div>
+            <h1 class="page-hero-title text-gradient-emerald">Operations Admin Suite</h1>
+            <p class="page-hero-desc">
+                Log in with your security passcode to coordinate Shizen's project registries, write engineering logs, and publish live field operation studies.
+            </p>
+        </div>
+    </section>
+
+    <!-- --- Passcode Shield Section --- -->
+    <section class="section-bg-darker" style="padding: 2rem 0 5rem 0;">
+        <div class="container">
+            
+            <!-- Lock Screen View -->
+            <div class="admin-lock-screen" id="admin-lock-screen">
+                <div class="glass-panel hazard-border lock-card">
+                    <div class="lock-icon-glow">🔑</div>
+                    <h3>SYSTEM ACCESS CONTROL</h3>
+                    <p>Enter the Shizen administrative dispatch passcode to unlock this publishing terminal.</p>
+                    
+                    <form id="admin-passcode-form">
+                        <div class="passcode-input-group">
+                            <input type="password" id="admin-passcode" placeholder="••••" required autofocus maxlength="12" aria-label="Enter security passcode">
+                        </div>
+                        <button type="submit" class="btn btn-warning" style="width: 100%;">Authorize Terminal</button>
+                    </form>
+                    <div class="lock-error-msg" id="lock-error-msg">ACCESS DENIED. RE-ENTER PASSCODE.</div>
+                </div>
+            </div>
+
+            <!-- Admin Dashboard Console (Hidden by default) -->
+            <div class="admin-dashboard-container" id="admin-dashboard" style="display:none;">
+                
+                <div class="admin-header-row">
+                    <div>
+                        <h2>Console Coordinator</h2>
+                        <p class="color-text-secondary" style="font-size:0.95rem; margin-top:0.25rem;">Active Session: Heavy-Lift Operations Dispatch Terminal</p>
+                    </div>
+                    <button class="btn btn-outline" id="btn-admin-logout" style="padding: 0.6rem 1.5rem; font-size:0.85rem;">Disconnect Session</button>
+                </div>
+
+                <div class="admin-grid">
+                    
+                    <!-- Left Column: Blog Composer Console -->
+                    <div class="glass-panel emerald-border admin-form-panel">
+                        <h3 id="admin-form-title">Compose Engineering Article</h3>
+                        
+                        <form id="admin-blog-form" style="display:flex; flex-direction:column; gap:1.5rem;">
+                            
+                            <div class="form-group" style="display:flex; flex-direction:column; gap:0.5rem;">
+                                <label for="blog-title" style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--color-text-muted);">Article Headline</label>
+                                <input type="text" id="blog-title" required placeholder="e.g. Center of Gravity Math in RoRo load-outs" style="background: rgba(7, 10, 19, 0.5);">
+                            </div>
+
+                            <div class="form-group-row">
+                                <div class="form-group" style="display:flex; flex-direction:column; gap:0.5rem;">
+                                    <label for="blog-category" style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--color-text-muted);">Category Classification</label>
+                                    <select id="blog-category" required style="background: rgba(7, 10, 19, 0.5);">
+                                        <option value="Field Report">Field Report</option>
+                                        <option value="Technology">Technology</option>
+                                        <option value="Marine Logistics">Marine Logistics</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" style="display:flex; flex-direction:column; gap:0.5rem;">
+                                    <label for="blog-cover" style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--color-text-muted);">Cover Icon Emoji</label>
+                                    <input type="text" id="blog-cover" required placeholder="e.g. 🏔️" style="background: rgba(7, 10, 19, 0.5);">
+                                    <div class="preset-emoji-select">
+                                        <button type="button" class="emoji-btn">🏔️</button>
+                                        <button type="button" class="emoji-btn">⚡</button>
+                                        <button type="button" class="emoji-btn">⚓</button>
+                                        <button type="button" class="emoji-btn">🚛</button>
+                                        <button type="button" class="emoji-btn">🍃</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="display:flex; flex-direction:column; gap:0.5rem;">
+                                <label for="blog-excerpt" style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--color-text-muted);">Article Brief Excerpt</label>
+                                <textarea id="blog-excerpt" required placeholder="A short, catchy summary of the case study details displayed on cards..." rows="2" style="background: rgba(7, 10, 19, 0.5); min-height: 70px;"></textarea>
+                            </div>
+
+                            <div class="form-group" style="display:flex; flex-direction:column; gap:0.5rem;">
+                                <label for="blog-content" style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--color-text-muted);">Full Detailed Body Content (HTML Allowed)</label>
+                                <textarea id="blog-content" required placeholder="Use standard paragraph tags <p> and subtitles <h4> to style your text..." rows="8" style="background: rgba(7, 10, 19, 0.5); min-height: 180px;"></textarea>
+                            </div>
+
+                            <!-- SEO Meta Data section -->
+                            <div style="border-top: 1px dashed var(--border-color); padding-top: 1.5rem; margin-top: 0.5rem;">
+                                <h4 style="font-size: 0.85rem; font-family:var(--font-mono); text-transform:uppercase; color:var(--color-accent-orange); margin-bottom:1.25rem;">SEO META MANAGER</h4>
+                                
+                                <div class="form-group" style="display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1rem;">
+                                    <label for="blog-seo-title" style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; color:var(--color-text-muted);">Custom Page Title Tag</label>
+                                    <input type="text" id="blog-seo-title" placeholder="Recommended: 50-60 characters" style="background: rgba(7, 10, 19, 0.5); font-size:0.85rem; padding: 0.75rem 1rem;">
+                                </div>
+
+                                <div class="form-group" style="display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1rem;">
+                                    <label for="blog-seo-desc" style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; color:var(--color-text-muted);">Custom Meta Description</label>
+                                    <input type="text" id="blog-seo-desc" placeholder="Recommended: 150-160 characters" style="background: rgba(7, 10, 19, 0.5); font-size:0.85rem; padding: 0.75rem 1rem;">
+                                </div>
+
+                                <div class="form-group" style="display:flex; flex-direction:column; gap:0.5rem;">
+                                    <label for="blog-seo-keywords" style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; color:var(--color-text-muted);">Custom Meta Keywords</label>
+                                    <input type="text" id="blog-seo-keywords" placeholder="e.g. wind logistics, SPMT specs, engineering" style="background: rgba(7, 10, 19, 0.5); font-size:0.85rem; padding: 0.75rem 1rem;">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" id="btn-submit-blog" style="margin-top: 1.5rem; width: 100%;">Publish Article Live</button>
+                        </form>
+                    </div>
+
+                    <!-- Right Column: Table Registry of Published Articles -->
+                    <div class="glass-panel hazard-border admin-registry-panel">
+                        <h3>Article Repository</h3>
+                        <p class="color-text-secondary" style="font-size:0.85rem; margin-top:-0.5rem; margin-bottom:1.5rem;">Manage active case studies. Edited articles publish instantly; deletions purge them completely from standard listings.</p>
+                        
+                        <div class="registry-table-wrapper">
+                            <table class="registry-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50px;">Icon</th>
+                                        <th>Headline & Ref ID</th>
+                                        <th>Category</th>
+                                        <th style="width: 130px;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="registry-table-body">
+                                    <!-- Table rows populated dynamically via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- --- Footer --- -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Branding column -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom:0.5rem;" id="footer-logo">
+                        <div class="logo-icon"></div>
+                        SHIZEN<span>.</span>
+                    </a>
+                    <p>Engineering the future of heavy project logistics. Carbon-neutral solutions for wind power, industrial infrastructure, and offshore logistics.</p>
+                    <div class="socials">
+                        <a href="#" class="social-icon" aria-label="LinkedIn Account">in</a>
+                        <a href="#" class="social-icon" aria-label="Twitter Account">𝕏</a>
+                        <a href="#" class="social-icon" aria-label="YouTube Channel">YT</a>
+                    </div>
+                </div>
+                
+                <!-- Menu Column 1 -->
+                <div class="footer-col">
+                    <h4>Fleets & Equipment</h4>
+                    <ul>
+                        <li><a href="index.html#showroom" id="footer-link-spmt">Self-Propelled SPMT</a></li>
+                        <li><a href="index.html#showroom" id="footer-link-blade">Rotor Blade Lifters</a></li>
+                        <li><a href="index.html#showroom" id="footer-link-semi">Hydraulic Semi-Trailers</a></li>
+                        <li><a href="index.html#showroom" id="footer-link-tractors">Heavy Power Tractors</a></li>
+                        <li><a href="index.html#showroom" id="footer-link-ppus">Hydrogen PPU Power</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Menu Column 2 -->
+                <div class="footer-col">
+                    <h4>Engineering Services</h4>
+                    <ul>
+                        <li><a href="index.html#simulator" id="footer-link-route">3D Route Simulations</a></li>
+                        <li><a href="index.html#calculator" id="footer-link-load">Center of Gravity Analysis</a></li>
+                        <li><a href="index.html#calculator" id="footer-link-swept">Swept Path Assessment</a></li>
+                        <li><a href="index.html#projects" id="footer-link-case">Port Load-Out Logistics</a></li>
+                        <li><a href="index.html#projects" id="footer-link-permits">Permit Engineering</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Menu Column 3 -->
+                <div class="footer-col">
+                    <h4>Global Hubs</h4>
+                    <ul>
+                        <li><a href="contact.html" id="footer-link-japan">Tokyo Hub (HQ)</a></li>
+                        <li><a href="contact.html" id="footer-link-germany">Munich Engineering</a></li>
+                        <li><a href="contact.html" id="footer-link-belgium">Antwerp Operations</a></li>
+                        <li><a href="contact.html" id="footer-link-india">Mumbai Logistics</a></li>
+                        <li><a href="contact.html" id="footer-link-usa">Houston Energy Port</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shizen Eco-Engineering Co., Ltd. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#" id="footer-link-privacy">Privacy Policy</a>
+                    <a href="#" id="footer-link-terms">Terms of Service</a>
+                    <a href="#" id="footer-link-compliance">Compliance & CSR</a>
+                    <a href="admin.html" id="footer-link-admin" style="color:var(--color-accent-orange); font-weight:bold;">Admin Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Logic Script -->
+    <script src="app.js"></script>
+</body>
+</html>

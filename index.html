@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary SEO Meta Tags -->
+    <title>Shizen | Eco-Engineering & Heavy Project Logistics</title>
+    <meta name="description" content="Shizen blends massive engineering power with zero-emission technology to provide carbon-neutral heavy transport, wind turbine logistics, and project cargo services globally.">
+    <meta name="keywords" content="heavy logistics, project cargo, SPMT, wind turbine blade transport, Faymonville, Goldhofer, Prism Logistics, carbon neutral transport, eco logistics">
+    <!-- Favicon (Fallback character vector) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2310b981%22/><circle cx=%2250%22 cy=%2250%22 r=%2225%22 fill=%22%23070a13%22/></svg>">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- --- Header / Navigation --- -->
+    <header id="main-header">
+        <div class="container">
+            <a href="#" class="logo" id="header-logo">
+                <div class="logo-icon"></div>
+                SHIZEN<span>.</span>
+            </a>
+            
+            <nav id="navbar">
+                <a href="index.html" class="active" id="nav-home">Home</a>
+                <a href="services.html" id="nav-services">Services</a>
+                <a href="about.html" id="nav-about">About Us</a>
+                <a href="blog.html" id="nav-blog">Blog</a>
+                <a href="contact.html" id="nav-contact">Contact Us</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="#quote" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;" id="nav-cta-quote">Book Transport</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Hero Section --- -->
+    <section class="hero" id="hero">
+        <!-- 3D Interactive Canvas Area with HTML HUD Telemetry Overlays as full-screen background -->
+        <div class="hero-3d-visualizer">
+            <canvas id="hero-3d-canvas" aria-label="Interactive 3D 16-Axle End-to-End Coupled Modular Transporter. Drag to rotate. Scroll wheel to zoom."></canvas>
+            
+            <!-- HTML-in-Canvas Accessible Telemetry Overlay -->
+            <div class="hero-telemetry-hud">
+                <!-- HUD Top Panel -->
+                <div class="hud-card-top">
+                    <div class="hud-title" aria-live="polite">
+                        <span></span>3D TELEMETRY ACTIVE
+                    </div>
+                    <div class="hud-stats-group">
+                        <div class="hud-stat-box">
+                            <span class="hud-stat-lbl">Active Platform</span>
+                            <span class="hud-stat-val" style="color:var(--color-accent-orange);">2 x 8-Axle Coupled</span>
+                        </div>
+                        <div class="hud-stat-box">
+                            <span class="hud-stat-lbl">Steer Angle</span>
+                            <span class="hud-stat-val" id="hud-val-angle">±35°</span>
+                        </div>
+                        <div class="hud-stat-box">
+                            <span class="hud-stat-lbl">Zoom Scale</span>
+                            <span class="hud-stat-val" id="hud-val-zoom" style="color:var(--color-accent-emerald);">100%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HUD Bottom Panel -->
+                <div class="hud-card-bottom">
+                    <div class="hud-controls-group">
+                        <span class="hud-label-action">Matrix Steer:</span>
+                        <button class="hud-btn active" id="hud-steer-all" aria-label="Steer 3D Transporter in All-Wheel Mode">All-Wheel</button>
+                        <button class="hud-btn" id="hud-steer-crab" aria-label="Steer 3D Transporter in Crab Mode">Crab</button>
+                        <button class="hud-btn" id="hud-steer-carousel" aria-label="Steer 3D Transporter in Carousel Mode">Carousel</button>
+                    </div>
+                    
+                    <div class="hud-gauge-group">
+                        <div class="hud-stat-box" style="text-align:right;">
+                            <span class="hud-stat-lbl">Velocity</span>
+                            <span class="hud-stat-val" id="hud-val-speed">15 km/h</span>
+                        </div>
+                        <div class="hud-gauge-bar" aria-label="Speedometer Indicator Gauge">
+                            <div class="hud-gauge-fill" id="hud-speed-gauge" style="width: 50%;"></div>
+                        </div>
+                        <button class="hud-btn" id="hud-btn-drive" aria-label="Start or Stop driving wheels">Drive</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fully accessible content container -->
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-title-prefix">
+                    <div class="hero-title-line"></div>
+                    <span>Eco-Engineering Heavy Transport</span>
+                </div>
+                
+                <h1 id="hero-heading">
+                    <span class="text-gradient-emerald">Engineering the</span>
+                    <span>Heavy-Lift</span>
+                    <span class="text-gradient-emerald">Transition.</span>
+                </h1>
+                
+                <p class="hero-desc" id="hero-description">
+                    Shizen merges colossal mechanical engineering with zero-emission technology. From gigawatt wind farm turbines to off-shore electrical substations, we plan, simulate, and execute the world's most demanding project logistics—in perfect harmony with nature.
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="#quote" class="btn btn-warning" id="hero-cta-quote">Plan Your Transport</a>
+                    <a href="#calculator" class="btn btn-outline" id="hero-cta-calc">Try Cargo Calculator</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num" id="stat-payload">15,000<span>t</span></div>
+                        <div class="hero-stat-label">Max Lift Capacity</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num" id="stat-co2">-94<span>%</span></div>
+                        <div class="hero-stat-label">Average CO2 Reduction</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num" id="stat-routes">1,420<span>+</span></div>
+                        <div class="hero-stat-label">Simulated Routes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Showroom & Fleet Configurator Section --- -->
+    <section id="showroom" class="section-bg-darker">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-pre">Shizen Fleets</span>
+                <h2 id="showroom-heading">Heavy-Duty Clean Equipment</h2>
+                <p id="showroom-description">Explore our state-of-the-art modular fleets. Designed for micro-precision steering, high structural stability, and powered by hybrid-electric hydrogen powerpacks.</p>
+            </div>
+            
+            <div class="showroom-layout">
+                <!-- Sidebar tabs selection -->
+                <div class="fleet-tabs" id="fleet-tabs-container">
+                    <button class="fleet-tab-btn active" data-fleet="spmt" id="tab-spmt">
+                        <span>Fleet Class 01</span>
+                        Self-Propelled Modular (SPMT)
+                    </button>
+                    <button class="fleet-tab-btn" data-fleet="blade-lifter" id="tab-blade-lifter">
+                        <span>Fleet Class 02</span>
+                        Active Blade Lifter
+                    </button>
+                    <button class="fleet-tab-btn" data-fleet="hydraulic-trailer" id="tab-hydraulic">
+                        <span>Fleet Class 03</span>
+                        Heavy Hydraulic Semi-Trailer
+                    </button>
+                    <button class="fleet-tab-btn" data-fleet="heavy-tractor" id="tab-tractor">
+                        <span>Fleet Class 04</span>
+                        Hybrid Heavy Tractor
+                    </button>
+                </div>
+                
+                <!-- Active Fleet Details Content View -->
+                <div class="showroom-display" id="showroom-display-panel">
+                    <div class="showroom-card" id="active-fleet-card">
+                        <div class="showroom-visual">
+                            <img src="assets/spmt_schematic.png" alt="Self Propelled Modular Transporter" id="fleet-image">
+                            
+                            <!-- Dynamic Steering Simulation widget overlay -->
+                            <div class="steering-simulation">
+                                <div class="sim-header">
+                                    <span>Steering Matrix</span>
+                                    <span class="badge badge-emerald" id="steering-mode-label" style="font-size:0.6rem; padding: 0.1rem 0.4rem;">All-Wheel</span>
+                                </div>
+                                <div class="steering-canvas-container">
+                                    <!-- A canvas to render the technical axle steer alignment angles dynamically -->
+                                    <canvas id="steering-canvas" width="180" height="40"></canvas>
+                                </div>
+                                <div class="steering-modes" id="steering-buttons">
+                                    <button class="mode-btn active" data-mode="all-wheel">All</button>
+                                    <button class="mode-btn" data-mode="crab">Crab</button>
+                                    <button class="mode-btn" data-mode="carousel">Carousel</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="showroom-info">
+                            <span class="badge badge-emerald model-tag" id="fleet-badge">Active Model: Shizen SPMT-8-H</span>
+                            <h3 id="fleet-title">Self-Propelled Modular Transporter</h3>
+                            <p class="showroom-desc" id="fleet-desc">The absolute standard for mega-logistics. Powered by clean hydrogen Power Pack Units (PPUs), each module boasts 8 heavy-duty electronic-steer axle lines. Modules can be coupled side-by-side or end-to-end to transport massive payloads over 10,000 tons with millimeter precision.</p>
+                            
+                            <div class="spec-grid">
+                                <div class="spec-item">
+                                    <div class="spec-val" id="fleet-spec-payload">320 t</div>
+                                    <div class="spec-label">Payload capacity (per module)</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-val" id="fleet-spec-steering">±135°</div>
+                                    <div class="spec-label">Steering rotation angle</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-val" id="fleet-spec-axles">8 lines</div>
+                                    <div class="spec-label">Axle lines per unit</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-val" id="fleet-spec-propulsion">Hydrogen Fuel Cell</div>
+                                    <div class="spec-label">Power propulsion type</div>
+                                </div>
+                            </div>
+                            
+                            <div class="capacity-progress-container">
+                                <div class="progress-header">
+                                    <span>Axle Loading Utilization Safety Limit</span>
+                                    <span id="capacity-limit-value">92%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" id="capacity-progress-bar" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Cargo Calculator Section --- -->
+    <section id="calculator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-pre">Interactive Calculator</span>
+                <h2 id="calc-heading">Engineered Load Configurator</h2>
+                <p id="calc-description">Estimate your transport configuration instantly. Select your heavy cargo profile, adjust weight/length thresholds, and see the dynamic modular vehicle configuration and load safety factor calculations in real-time.</p>
+            </div>
+            
+            <div class="calc-grid">
+                <!-- User input side -->
+                <div class="glass-panel hazard-border calc-inputs">
+                    <div class="form-group">
+                        <label>
+                            <span>Select Cargo Profile</span>
+                            <span class="label-info" id="selected-cargo-type">Turbine Blade</span>
+                        </label>
+                        <div class="cargo-presets" id="cargo-presets-container">
+                            <div class="cargo-preset-card active" data-preset="blade" id="preset-blade">
+                                <input type="radio" name="cargo-preset" value="blade" checked aria-label="Turbine Blade Preset">
+                                <span class="cargo-icon">🍃</span>
+                                <span>Rotor Blade</span>
+                            </div>
+                            <div class="cargo-preset-card" data-preset="transformer" id="preset-transformer">
+                                <input type="radio" name="cargo-preset" value="transformer" aria-label="Power Substation Transformer Preset">
+                                <span class="cargo-icon">⚡</span>
+                                <span>Transformer</span>
+                            </div>
+                            <div class="cargo-preset-card" data-preset="reactor" id="preset-reactor">
+                                <input type="radio" name="cargo-preset" value="reactor" aria-label="Chemical Reactor Columns Preset">
+                                <span class="cargo-icon">🧪</span>
+                                <span>Reactor</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cargo-weight-slider">
+                            <span>Cargo Gross Weight</span>
+                            <span class="label-info" id="calc-weight-val">80 Tons</span>
+                        </label>
+                        <div class="range-container">
+                            <input type="range" id="cargo-weight-slider" min="30" max="1200" step="10" value="80" aria-label="Cargo Weight Slider">
+                            <div class="range-limits">
+                                <span>30 t</span>
+                                <span>1,200 t</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cargo-length-slider">
+                            <span>Cargo Structure Length</span>
+                            <span class="label-info" id="calc-length-val">75 Meters</span>
+                        </label>
+                        <div class="range-container">
+                            <input type="range" id="cargo-length-slider" min="10" max="120" step="5" value="75" aria-label="Cargo Length Slider">
+                            <div class="range-limits">
+                                <span>10 m</span>
+                                <span>120 m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Calculator output results side -->
+                <div class="glass-panel emerald-border calc-results">
+                    <div class="results-header">
+                        <h3>Engineered Transport Solution</h3>
+                        <p style="font-size:0.85rem;" id="calc-recom-title">Recommended transport configuration based on calculated safety limits:</p>
+                    </div>
+                    
+                    <!-- Alert Box for Overload State -->
+                    <div class="alert-box" id="calc-overload-alert">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-text">
+                            <h4>OVERLOAD SAFETY TRIGGER</h4>
+                            <p id="alert-message">Selected payload exceeds structural safety margins for these axle lines. Please extend axle spacing or reduce weight.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="results-grid">
+                        <div class="result-row">
+                            <label>Recommended Fleet Vehicle</label>
+                            <span id="res-vehicle">Shizen BladeLifter-S75</span>
+                        </div>
+                        <div class="result-row">
+                            <label>Required Axle Lines</label>
+                            <span id="res-axles">12 Axle Lines</span>
+                        </div>
+                        <div class="result-row">
+                            <label>Average Load per Axle</label>
+                            <span id="res-axle-load">6.6 t / Axle</span>
+                        </div>
+                        <div class="result-row">
+                            <label>Center of Gravity Clearance</label>
+                            <span class="emerald" id="res-cog">Safe Range (3.4m)</span>
+                        </div>
+                        <div class="result-row">
+                            <label>Estimated Turning Radius</label>
+                            <span id="res-radius">45.2 m</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Eco Offset Savings Card -->
+                    <div class="eco-comparison-card">
+                        <div class="eco-icon-container">
+                            <div class="eco-icon-leaf"></div>
+                        </div>
+                        <div class="eco-comparison-details">
+                            <h4>Eco-Logistics Carbon Offset</h4>
+                            <p>Saves <span class="eco-saving-percentage" id="res-co2-saved">6.4 Tons Co2</span> per 100km compared to conventional diesel haulage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Route Simulator Section --- -->
+    <section id="simulator" class="section-bg-darker">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-pre">Route Engineering</span>
+                <h2 id="sim-heading">Active Obstacle Simulator</h2>
+                <p id="sim-description">High-precision project cargo requires detailed route surveys. Simulate our electronic self-steering transporter navigating a tight winding mountain corner with an 85-meter cargo payload dynamically adjusting to avoid rock obstacles.</p>
+            </div>
+            
+            <div class="sim-grid">
+                <div class="sim-info">
+                    <h3>Swept Path Route Clearance</h3>
+                    <p id="sim-info-desc">When transporting oversized components like turbine blades, structural clearance and vehicle turning capabilities are simulated down to the millimeter before tires hit asphalt. Our Active Blade Lifters can rotate blades up to 60° to avoid cliffs, bridge railings, and electric powerlines.</p>
+                    
+                    <div class="sim-details">
+                        <div class="sim-detail-item">
+                            <div class="sim-num-badge">01</div>
+                            <div class="sim-detail-text">
+                                <h4>Active Rotor Adaptation</h4>
+                                <p>Dynamic blade tilt and lift mechanics adjust height to float safely above roadside barriers.</p>
+                            </div>
+                        </div>
+                        <div class="sim-detail-item">
+                            <div class="sim-num-badge">02</div>
+                            <div class="sim-detail-text">
+                                <h4>Electronic Self-Steering</h4>
+                                <p>Independent electronic axle coordination reduces swept-path radius by up to 40% compared to standard heavy transport.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="interactive-canvas-panel">
+                    <div class="canvas-header">
+                        <div class="canvas-title">ROUTE SWEEP SIMULATION</div>
+                        <div class="canvas-status" id="sim-status-indicator">STATUS: READY</div>
+                    </div>
+                    <div class="canvas-content" id="sim-canvas-area">
+                        <!-- Winding road path and vehicle representation using responsive SVGs -->
+                        <svg class="svg-viewport" viewBox="0 0 500 300" id="sim-svg-root" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Definition of patterns and markers -->
+                            <defs>
+                                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1"/>
+                                </pattern>
+                            </defs>
+                            
+                            <!-- Grid Background -->
+                            <rect width="100%" height="100%" fill="url(#grid)" />
+                            
+                            <!-- Obstacles (Mountains/Barriers) -->
+                            <path d="M 400 -20 Q 340 80 430 160 Q 480 200 520 200 L 520 -20 Z" fill="#182035" stroke="var(--border-color)" stroke-width="2" />
+                            <circle cx="360" cy="90" r="15" fill="#ef4444" opacity="0.15" />
+                            <circle cx="360" cy="90" r="3" fill="#ef4444" />
+                            <text x="380" y="93" fill="var(--color-text-muted)" font-family="monospace" font-size="9">OBSTACLE: ROCK OUTVALLEY</text>
+                            
+                            <!-- Roadway -->
+                            <path class="svg-road" id="road-path" d="M -50 200 C 150 200, 220 200, 260 170 C 310 130, 310 50, 420 50 L 550 50" />
+                            <path class="svg-road-centerline" d="M -50 200 C 150 200, 220 200, 260 170 C 310 130, 310 50, 420 50 L 550 50" />
+                            
+                            <!-- Vehicle Group -->
+                            <g class="svg-vehicle" id="svg-vehicle-group">
+                                <!-- Cabin/Power Pack -->
+                                <rect x="-24" y="-8" width="12" height="16" rx="2" fill="var(--color-accent-orange)" />
+                                <!-- Axle trailer lines -->
+                                <rect x="-12" y="-6" width="30" height="12" rx="1" fill="#4b5563" />
+                                <!-- Wheels -->
+                                <circle cx="-8" cy="-7" r="2" fill="#000" />
+                                <circle cx="-8" cy="7" r="2" fill="#000" />
+                                <circle cx="2" cy="-7" r="2" fill="#000" />
+                                <circle cx="2" cy="7" r="2" fill="#000" />
+                                <circle cx="12" cy="-7" r="2" fill="#000" />
+                                <circle cx="12" cy="7" r="2" fill="#000" />
+                                
+                                <!-- Cargo Structure (Wind blade outline in green) -->
+                                <line x1="-15" y1="0" x2="110" y2="0" stroke="var(--color-accent-emerald)" stroke-width="4" stroke-linecap="round" id="svg-cargo-line" />
+                                <!-- Rotor Blade Adapter base connection -->
+                                <circle cx="-12" cy="0" r="4" fill="var(--color-accent-emerald)" />
+                            </g>
+                        </svg>
+                        
+                        <!-- Control overlays -->
+                        <div class="sim-control-widget">
+                            <button class="sim-widget-btn" id="btn-play-sim" aria-label="Play Route Simulation">▶</button>
+                            <div class="sim-widget-text">
+                                <h5>Active Blade Lifter-S85</h5>
+                                <p id="sim-progress-metric">Progress: 0% | Speed: 15 km/h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hazard-stripe"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Projects Portfolio --- -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-pre">Execution Excellence</span>
+                <h2 id="projects-heading">Engineered Logistics Masterpieces</h2>
+                <p id="projects-description">A look at some of the world's most complex heavy haulage projects, executed carbon-neutrally with safety, engineering precision, and complete ecological harmony.</p>
+            </div>
+            
+            <div class="projects-grid" id="projects-portfolio-container">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="assets/hero_banner.png" alt="Project Boreas Windblade Transport">
+                    </div>
+                    <div class="project-overlay"></div>
+                    <div class="project-content">
+                        <span class="badge badge-emerald">Wind Energy</span>
+                        <h3>Project Boreas</h3>
+                        <p>Transport of 45 massive 85-meter rotor blades across 220km of complex alpine mountain routes utilizing our active blade adapters to bypass obstacles.</p>
+                        <div class="projects-stats">
+                            <div class="project-stat-box">
+                                <div class="val">85m</div>
+                                <div class="lbl">Blade Length</div>
+                            </div>
+                            <div class="project-stat-box">
+                                <div class="val">42 Axles</div>
+                                <div class="lbl">Max Setup</div>
+                            </div>
+                            <div class="project-stat-box">
+                                <div class="val">100%</div>
+                                <div class="lbl">Zero-Diesel</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="assets/spmt_schematic.png" alt="Project Neptune Offshore Substation Logistics">
+                    </div>
+                    <div class="project-overlay"></div>
+                    <div class="project-content">
+                        <span class="badge badge-emerald">Offshore Power</span>
+                        <h3>Project Neptune</h3>
+                        <p>Millimeter-precision roll-on and load-out of a 3,400-ton offshore electrical transformer substation using 128 coupled SPMT axle lines.</p>
+                        <div class="projects-stats">
+                            <div class="project-stat-box">
+                                <div class="val">3,400t</div>
+                                <div class="lbl">Total Weight</div>
+                            </div>
+                            <div class="project-stat-box">
+                                <div class="val">128 Lines</div>
+                                <div class="lbl">Axles Linked</div>
+                            </div>
+                            <div class="project-stat-box">
+                                <div class="val">-98%</div>
+                                <div class="lbl">CO2 Output</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="assets/blade_lifter_schematic.png" alt="Project Fuji Petrochemical Columns">
+                    </div>
+                    <div class="project-overlay"></div>
+                    <div class="project-content">
+                        <span class="badge badge-orange">Industrial Infrastructure</span>
+                        <h3>Project Fuji</h3>
+                        <p>Special transport of ultra-heavy industrial refinery reactors through tight urban ports and custom engineered bridges in Japan.</p>
+                        <div class="projects-stats">
+                            <div class="project-stat-box">
+                                <div class="val">820t</div>
+                                <div class="lbl">Unit Weight</div>
+                            </div>
+                            <div class="project-stat-box">
+                                <div class="val">14m</div>
+                                <div class="lbl">Bridge Clearance</div>
+                            </div>
+                            <div class="project-stat-box">
+                                <div class="val">100%</div>
+                                <div class="lbl">Safe Execution</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Multi-Step Quote Builder Section --- -->
+    <section id="quote" class="section-bg-darker">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin: 0 auto 3.5rem auto;">
+                <span class="section-pre">Transport Request</span>
+                <h2 id="quote-heading">Request an Engineered Quote</h2>
+                <p id="quote-description">Input your high-value cargo and logistics specifications. Our engineering team will review structural details and design a custom eco-heavy routing plan.</p>
+            </div>
+            
+            <div class="glass-panel quote-card">
+                <!-- Steps indicators -->
+                <div class="quote-steps" id="wizard-steps-container">
+                    <div class="quote-step-indicator active" data-step="1" id="wizard-step-1">
+                        <div class="step-num">1</div>
+                        <div class="step-lbl">Cargo</div>
+                    </div>
+                    <div class="quote-step-indicator" data-step="2" id="wizard-step-2">
+                        <div class="step-num">2</div>
+                        <div class="step-lbl">Logistics</div>
+                    </div>
+                    <div class="quote-step-indicator" data-step="3" id="wizard-step-3">
+                        <div class="step-num">3</div>
+                        <div class="step-lbl">Priority</div>
+                    </div>
+                </div>
+                
+                <!-- Form body wizard steps -->
+                <form id="quote-wizard-form" novalidate>
+                    <div class="quote-form-body">
+                        <!-- Step 1: Cargo Info -->
+                        <div class="quote-step-content active" data-step="1" id="step-1-content">
+                            <h3 style="margin-bottom:1.5rem; font-size:1.4rem;">Describe Your Heavy Cargo</h3>
+                            <div class="inputs-row" style="margin-bottom:1.5rem;">
+                                <div class="form-group">
+                                    <label for="form-cargo-name">Cargo Classification</label>
+                                    <select id="form-cargo-name" required>
+                                        <option value="">-- Choose Cargo Type --</option>
+                                        <option value="wind-blade">Rotor Wind Blade (>60m)</option>
+                                        <option value="generator">Turbine Wind Generator</option>
+                                        <option value="substation">Electrical Substation Transformer</option>
+                                        <option value="industrial-column">Refinery Fractionation Column</option>
+                                        <option value="other">Other Ultra-Heavy / ODC Cargo</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-cargo-weight">Gross Weight (Metric Tons)</label>
+                                    <input type="number" id="form-cargo-weight" placeholder="e.g. 240" min="10" max="5000" required>
+                                </div>
+                            </div>
+                            <div class="inputs-row-3">
+                                <div class="form-group">
+                                    <label for="form-cargo-length">Length (m)</label>
+                                    <input type="number" id="form-cargo-length" placeholder="e.g. 75" min="1" max="150" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-cargo-width">Width (m)</label>
+                                    <input type="number" id="form-cargo-width" placeholder="e.g. 4.8" min="1" max="20" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-cargo-height">Height (m)</label>
+                                    <input type="number" id="form-cargo-height" placeholder="e.g. 5.2" min="1" max="25" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Routes Logistics -->
+                        <div class="quote-step-content" data-step="2" id="step-2-content">
+                            <h3 style="margin-bottom:1.5rem; font-size:1.4rem;">Route & Site Logistics</h3>
+                            <div class="inputs-row" style="margin-bottom:1.5rem;">
+                                <div class="form-group">
+                                    <label for="form-route-origin">Port / Site of Origin</label>
+                                    <input type="text" id="form-route-origin" placeholder="e.g. Port of Rotterdam, NL" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-route-dest">Final Destination Site</label>
+                                    <input type="text" id="form-route-dest" placeholder="e.g. Boreas Mountain Windpark, DE" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-route-obstacles">Known Route Obstacles / Special Instructions</label>
+                                <textarea id="form-route-obstacles" placeholder="Describe any low bridges, narrow historical town turns, high slopes, or weak bridges..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Contact & Priority -->
+                        <div class="quote-step-content" data-step="3" id="step-3-content">
+                            <h3 style="margin-bottom:1.5rem; font-size:1.4rem;">Ecological Focus & Contact Details</h3>
+                            <div class="inputs-row" style="margin-bottom:1.5rem;">
+                                <div class="form-group">
+                                    <label for="form-contact-name">Company Representative</label>
+                                    <input type="text" id="form-contact-name" placeholder="e.g. Hans Schmidt" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-contact-email">Corporate Email Address</label>
+                                    <input type="email" id="form-contact-email" placeholder="e.g. logistics@energycorp.com" required>
+                                </div>
+                            </div>
+                            <div class="inputs-row">
+                                <div class="form-group">
+                                    <label for="form-eco-priority">Sustainability Target Priority</label>
+                                    <select id="form-eco-priority">
+                                        <option value="eco-max">Maximum Carbon Offset (100% Zero-Emission Fleet Focus)</option>
+                                        <option value="eco-balanced">Balanced Cost & Eco-Logistics Efficiency</option>
+                                        <option value="standard">Standard Project Haulage Requirements</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-timeline">Execution Timeline</label>
+                                    <select id="form-timeline">
+                                        <option value="rapid">Within 3 Months (Immediate Survey Required)</option>
+                                        <option value="mid">3 to 6 Months</option>
+                                        <option value="long">6+ Months (Planning & Budgeting Phase)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4: Success Screen -->
+                        <div class="quote-step-content" data-step="4" id="step-4-content">
+                            <div class="success-screen">
+                                <div class="success-icon">✓</div>
+                                <h4>REQUEST REGISTERED SUCCESSFULLY</h4>
+                                <p>Thank you for choosing Shizen. Our specialized transport engineering team has received your cargo specifications and is initiating 3D routing and axle configurations.</p>
+                                <div class="success-reference" id="quote-ref-number">REFERENCE NUMBER: SHZ-904128-PX</div>
+                                <p style="font-size:0.8rem; color:var(--color-text-muted);">A copy of this engineered request has been sent to your corporate email. We will contact you within 24 hours with an initial feasibility report.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Wizard Buttons Navigation -->
+                    <div class="quote-footer" id="wizard-navigation-container">
+                        <button type="button" class="btn btn-outline" id="btn-wizard-back" style="visibility: hidden;">Back</button>
+                        <button type="button" class="btn btn-primary" id="btn-wizard-next">Next Step</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Footer --- -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Branding column -->
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="margin-bottom:0.5rem;" id="footer-logo">
+                        <div class="logo-icon"></div>
+                        SHIZEN<span>.</span>
+                    </a>
+                    <p>Engineering the future of heavy project logistics. Carbon-neutral solutions for wind power, industrial infrastructure, and offshore logistics.</p>
+                    <div class="socials">
+                        <a href="#" class="social-icon" aria-label="LinkedIn Account">in</a>
+                        <a href="#" class="social-icon" aria-label="Twitter Account">𝕏</a>
+                        <a href="#" class="social-icon" aria-label="YouTube Channel">YT</a>
+                    </div>
+                </div>
+                
+                <!-- Menu Column 1 -->
+                <div class="footer-col">
+                    <h4>Fleets & Equipment</h4>
+                    <ul>
+                        <li><a href="index.html#showroom" id="footer-link-spmt">Self-Propelled SPMT</a></li>
+                        <li><a href="index.html#showroom" id="footer-link-blade">Rotor Blade Lifters</a></li>
+                        <li><a href="index.html#showroom" id="footer-link-semi">Hydraulic Semi-Trailers</a></li>
+                        <li><a href="index.html#showroom" id="footer-link-tractors">Heavy Power Tractors</a></li>
+                        <li><a href="index.html#showroom" id="footer-link-ppus">Hydrogen PPU Power</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Menu Column 2 -->
+                <div class="footer-col">
+                    <h4>Engineering Services</h4>
+                    <ul>
+                        <li><a href="index.html#simulator" id="footer-link-route">3D Route Simulations</a></li>
+                        <li><a href="index.html#calculator" id="footer-link-load">Center of Gravity Analysis</a></li>
+                        <li><a href="index.html#calculator" id="footer-link-swept">Swept Path Assessment</a></li>
+                        <li><a href="index.html#projects" id="footer-link-case">Port Load-Out Logistics</a></li>
+                        <li><a href="index.html#projects" id="footer-link-permits">Permit Engineering</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Menu Column 3 -->
+                <div class="footer-col">
+                    <h4>Global Hubs</h4>
+                    <ul>
+                        <li><a href="#" id="footer-link-japan">Tokyo Hub (HQ)</a></li>
+                        <li><a href="#" id="footer-link-germany">Munich Engineering</a></li>
+                        <li><a href="#" id="footer-link-belgium">Antwerp Operations</a></li>
+                        <li><a href="#" id="footer-link-india">Mumbai Logistics</a></li>
+                        <li><a href="#" id="footer-link-usa">Houston Energy Port</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shizen Eco-Engineering Co., Ltd. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#" id="footer-link-privacy">Privacy Policy</a>
+                    <a href="#" id="footer-link-terms">Terms of Service</a>
+                    <a href="#" id="footer-link-compliance">Compliance & CSR</a>
+                    <a href="admin.html" id="footer-link-admin" style="color:var(--color-accent-orange); font-weight:bold;">Admin Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Logic Script -->
+    <script src="app.js"></script>
+</body>
+</html>
