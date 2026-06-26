@@ -1852,3 +1852,24 @@ function initAdminPortal() {
     
     checkAuth();
 }
+/* --- Mobile Menu Toggle logic --- */
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navbar = document.getElementById('navbar');
+    
+    if (mobileMenuBtn && navbar) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navbar.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        const navLinks = navbar.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navbar.classList.remove('active');
+            });
+        });
+    }
+});
