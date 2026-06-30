@@ -1,6 +1,7 @@
 /* ==========================================================================
    SHIZEN ECO-ENGINEERING & HEAVY LOGISTICS - CSS DESIGN SYSTEM
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
@@ -309,12 +310,16 @@ header .container {
 .logo {
     display: flex;
     align-items: center;
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.6rem;
-    color: var(--color-text-primary);
     text-decoration: none;
-    gap: 0.5rem;
+    gap: 0.75rem;
+}
+
+.logo-text {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
 }
 
 .logo span {
@@ -322,8 +327,8 @@ header .container {
 }
 
 .logo-icon {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     background: linear-gradient(135deg, var(--color-accent-emerald), #059669);
     border-radius: var(--radius-sm);
     position: relative;
@@ -333,11 +338,11 @@ header .container {
 .logo-icon::after {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     background: var(--color-bg-darkest);
-    top: 11px;
-    left: 11px;
+    top: 12px;
+    left: 12px;
     border-radius: 2px;
 }
 
@@ -2042,12 +2047,15 @@ footer {
     font-size: 3.2rem;
     line-height: 1.15;
     margin-bottom: 1rem;
+    color: var(--color-bg-darkest);
+    font-weight: 800;
 }
 
 .page-hero-desc {
     max-width: 680px;
     font-size: 1.1rem;
-    color: var(--color-text-secondary);
+    color: var(--color-bg-dark);
+    font-weight: 500;
 }
 
 /* --- Services Page Layout --- */
