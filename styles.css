@@ -2047,15 +2047,15 @@ footer {
     font-size: 3.2rem;
     line-height: 1.15;
     margin-bottom: 1rem;
-    color: var(--color-bg-darkest);
-    font-weight: 800;
+    color: #ffffff;
+    font-weight: 900;
 }
 
 .page-hero-desc {
     max-width: 680px;
-    font-size: 1.1rem;
-    color: var(--color-bg-dark);
-    font-weight: 500;
+    font-size: 1.15rem;
+    color: #f1f5f9;
+    font-weight: 600;
 }
 
 /* --- Services Page Layout --- */
