@@ -429,6 +429,7 @@ nav a:hover::after, nav a.active::after {
     height: 100vh;
     display: flex;
     align-items: center;
+    background-color: #000000;
     overflow: hidden;
     padding-top: 120px;
 }
@@ -1924,6 +1925,7 @@ footer {
     .hero {
         height: auto;
         min-height: 100vh;
+        background-color: #000000 !important;
     }
     .hero-3d-visualizer {
         position: relative;
