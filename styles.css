@@ -1926,10 +1926,12 @@ footer {
         height: auto;
         min-height: 100vh;
         background-color: #000000 !important;
+        flex-direction: column;
     }
     .hero-3d-visualizer {
         position: relative;
         height: 480px;
+        width: 100%;
         order: 2;
     }
     .hero .container {
