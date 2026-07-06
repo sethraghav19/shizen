@@ -36,7 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message .= "Eco-Priority: $ecoPriority\n";
     $message .= "Timeline: $timeline\n";
 
-    $headers = "From: webmaster@shizengroup.in\r\n";
+    $headers = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $headers .= "From: connect@shizengroup.in\r\n";
     $headers .= "Reply-To: $contactEmail\r\n";
 
     if (mail($to, $subject, $message, $headers)) {
