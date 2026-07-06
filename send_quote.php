@@ -1,9 +1,15 @@
 <?php
 header('Content-Type: application/json');
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+require 'phpmailer/Exception.php';
+require 'phpmailer/PHPMailer.php';
+require 'phpmailer/SMTP.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $to = "connect@shizengroup.in";
-    $subject = "New Quote Request - Shizen Heavy Logistics";
     
     // Retrieve fields
     $cargoName = $_POST['cargo_name'] ?? 'N/A';
@@ -36,15 +42,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message .= "Eco-Priority: $ecoPriority\n";
     $message .= "Timeline: $timeline\n";
 
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-    $headers .= "From: connect@shizengroup.in\r\n";
-    $headers .= "Reply-To: $contactEmail\r\n";
+    $mail = new PHPMailer(true);
 
-    if (mail($to, $subject, $message, $headers)) {
+    try {
+        // Server settings
+        $mail->isSMTP();
+        $mail->Host       = 'smtpout.secureserver.net'; // GoDaddy SMTP server
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'connect@shizengroup.in';
+        $mail->Password   = 'YOUR_EMAIL_PASSWORD_HERE'; // <--- REPLACE THIS IN GODADDY FILE MANAGER
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = 465;
+
+        // Recipients
+        $mail->setFrom('connect@shizengroup.in', 'Shizen Website');
+        $mail->addAddress('connect@shizengroup.in', 'Shizen Connect'); // Send to yourself
+        $mail->addReplyTo($contactEmail, $contactName);
+
+        // Content
+        $mail->isHTML(false);
+        $mail->Subject = "New Quote Request - Shizen Heavy Logistics";
+        $mail->Body    = $message;
+
+        $mail->send();
         echo json_encode(["status" => "success"]);
-    } else {
-        echo json_encode(["status" => "error", "message" => "Mail server failed to send"]);
+    } catch (Exception $e) {
+        echo json_encode(["status" => "error", "message" => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
     }
 } else {
     echo json_encode(["status" => "error", "message" => "Invalid request"]);
