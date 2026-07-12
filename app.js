@@ -1413,22 +1413,47 @@ function initContactForm() {
         });
         
         if (!isValid) return;
-        
-        // Show success block and hide inputs
-        if (successAlert) {
-            successAlert.style.display = "block";
-            successAlert.animate([
-                { opacity: 0, transform: 'translateY(10px)' },
-                { opacity: 1, transform: 'translateY(0)' }
-            ], { duration: 300, fill: 'forwards' });
+
+        const btnSubmit = form.querySelector("button[type='submit']");
+        const originalText = btnSubmit.innerHTML;
+        btnSubmit.innerHTML = "Transmitting...";
+        btnSubmit.disabled = true;
+
+        const formData = new FormData();
+        formData.append("contact_name", document.getElementById("contact-name").value);
+        formData.append("contact_email", document.getElementById("contact-email").value);
+        formData.append("contact_service", document.getElementById("contact-service").value);
+        formData.append("contact_payload", document.getElementById("contact-payload").value);
+        formData.append("contact_message", document.getElementById("contact-message").value);
+
+        fetch("send_contact.php", {
+            method: "POST",
+            body: formData
+        }).then(response => response.json())
+          .then(data => {
+            btnSubmit.innerHTML = originalText;
+            btnSubmit.disabled = false;
             
-            form.reset();
-            // Scroll to success message
-            successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-            alert("Inquiry successfully transmitted! Our special transport unit will contact you within 24 hours.");
-            form.reset();
-        }
+            // Show success block
+            if (successAlert) {
+                successAlert.style.display = "block";
+                successAlert.animate([
+                    { opacity: 0, transform: 'translateY(10px)' },
+                    { opacity: 1, transform: 'translateY(0)' }
+                ], { duration: 300, fill: 'forwards' });
+                
+                form.reset();
+                successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                alert("Inquiry successfully transmitted! Our special transport unit will contact you within 24 hours.");
+                form.reset();
+            }
+          }).catch(err => {
+              console.error(err);
+              btnSubmit.innerHTML = originalText;
+              btnSubmit.disabled = false;
+              alert("Transmission failed. Please check your network connection.");
+          });
     });
 }
 
