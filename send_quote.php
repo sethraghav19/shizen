@@ -54,8 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Port       = 25;
 
         // Recipients
-        $mail->setFrom('Sales@shizengroup.in', 'Shizen Website');
-        $mail->addAddress('Sales@shizengroup.in', 'Shizen Sales'); // Send to yourself
+        $mail->setFrom('connect@shizengroup.in', 'Shizen Website');
+        $mail->addAddress('connect@shizengroup.in', 'Shizen Connect'); // Send to yourself
         $mail->addReplyTo($contactEmail, $contactName);
 
         // Content
