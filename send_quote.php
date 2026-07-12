@@ -47,16 +47,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Server settings
         $mail->isSMTP();
-        $mail->Host       = 'smtpout.secureserver.net'; // GoDaddy SMTP server
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'connect@shizengroup.in';
-        $mail->Password   = 'YOUR_EMAIL_PASSWORD_HERE'; // <--- REPLACE THIS IN GODADDY FILE MANAGER
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port       = 465;
+        $mail->Host       = 'localhost'; 
+        $mail->SMTPAuth   = false;
+        $mail->SMTPSecure = false;
+        $mail->SMTPAutoTLS = false;
+        $mail->Port       = 25;
 
         // Recipients
-        $mail->setFrom('connect@shizengroup.in', 'Shizen Website');
-        $mail->addAddress('connect@shizengroup.in', 'Shizen Connect'); // Send to yourself
+        $mail->setFrom('Sales@shizengroup.in', 'Shizen Website');
+        $mail->addAddress('Sales@shizengroup.in', 'Shizen Sales'); // Send to yourself
         $mail->addReplyTo($contactEmail, $contactName);
 
         // Content
